@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
-const GRAVITY:float = 700.0
+const GRAVITY:float = 850.0
 const JUMP_VELOCITY:float = -400.0
 
 @onready var sprite : AnimatedSprite2D = $Sprite
+@onready var animation_player : AnimationPlayer = $AnimationPlayer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -23,6 +24,7 @@ func _physics_process(delta):
 func fly() -> void:
 	if Input.is_action_just_pressed("fly"):
 		velocity.y = JUMP_VELOCITY
+		animation_player.play("power")
 
 
 func die() -> void:
