@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://blvm25xm0x47v"]
+
+[ext_resource type="Texture2D" uid="uid://br6gdf62wy50s" path="res://assets/plane/planes_sheet.png" id="1_kgu2e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yab0f"]
+atlas = ExtResource("1_kgu2e")
+region = Rect2(0, 0, 88, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x01g"]
+atlas = ExtResource("1_kgu2e")
+region = Rect2(88, 0, 88, 73)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfobm"]
+atlas = ExtResource("1_kgu2e")
+region = Rect2(176, 0, 88, 73)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2s4se"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yab0f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7x01g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfobm")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 15.0
+}]
+
+[node name="Plane" type="CharacterBody2D"]
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_2s4se")
+animation = &"fly"
+autoplay = "fly"
+frame_progress = 0.123901
