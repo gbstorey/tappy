@@ -72,7 +72,7 @@ _data = {
 "power": SubResource("Animation_loguf")
 }
 
-[node name="Plane" type="CharacterBody2D"]
+[node name="Plane" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_750pc")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
