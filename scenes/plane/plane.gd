@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal on_plane_died
+
 const GRAVITY:float = 850.0
 const JUMP_VELOCITY:float = -400.0
 
@@ -29,4 +31,5 @@ func fly() -> void:
 
 func die() -> void:
 	sprite.stop()
+	on_plane_died.emit()
 	set_physics_process(false)
